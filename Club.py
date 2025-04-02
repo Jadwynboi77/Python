@@ -49,7 +49,7 @@ def meal_Lists():
     print(f'4. {meal_list[3]}.')
     
 
-#Printing all of the list-----------------------------------------------------------------------------------------------
+#Printing all of the list----------------------------------------------------------------------------------------------
 if AgeConfirm == True:
     activity_lists()
     ask1 = input("Enter the number of your chosen activity: ")
@@ -92,7 +92,7 @@ if AgeConfirm == True:
 
 #Asking for attendence--------------------------------------------------------------------------------------------------
 if AgeConfirm == True:
-    attend = input("Are you going to be attending? (Yes or no): ")
+    attend = input("Are you going to be attending?(Yes or no): ")
     if attend == "yes":
         print(f"{NameF} has comfirmed for {Activity_list[list_count]}, see you there!")
     elif attend == "no":
