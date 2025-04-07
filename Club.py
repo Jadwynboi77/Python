@@ -19,20 +19,20 @@ elif Age > 17:
     print("Sorry, you are too old.")
     quit
 
-#Creating the list----------------------------------------------------------------------------------------------------
+#Creating the list---------------------------------------------------------------------------------------------------
 meal_list = ["strandard","Vegetarian","Dairy-free","No meal"]
 Activity_list = ["Music jam Session","science experiments","Sports leadership training"]
 Other_list = [2,3,4,"easy","moderate","challenging","$5 fee","$10 fee","$12 fee"]
 
-#Creating the Varibables----------------------------------------------------------------------------------------------
+#Creating the Varibables---------------------------------------------------------------------------------------------
 
-list_cutO = 0 #------------- the amount of hours ---------------------------------------------------------------------
-list_cutT = 0 #------------- the difficulty of the activity-----------------------------------------------------------
-list_cutTH = 0 #------------- the cost of the fee---------------------------------------------------------------------
+list_cutO = 0 #------------- the amount of hours --------------------------------------------------------------------
+list_cutT = 0 #------------- the difficulty of the activity----------------------------------------------------------
+list_cutTH = 0 #------------- the cost of the fee--------------------------------------------------------------------
 fee = 5
 mealfee = 7
 
-#Printing the activity list-------------------------------------------------------------------------------------------
+#Printing the activity list------------------------------------------------------------------------------------------
 def activity_lists():
     print('Please choose an activity')
     print(f"1. {Activity_list[0]} ({Other_list[0]} hours, {Other_list[3]}, {Other_list[6]})")
@@ -40,7 +40,7 @@ def activity_lists():
     print(f"3. {Activity_list[2]} ({Other_list[2]} hours, {Other_list[5]}, {Other_list[8]})")
    
 
-#Printing the meal list-----------------------------------------------------------------------------------------------
+#Printing the meal list----------------------------------------------------------------------------------------------
 def meal_Lists():
     print("Meal options:")
     print(f'1. {meal_list[0]}.')
@@ -49,11 +49,11 @@ def meal_Lists():
     print(f'4. {meal_list[3]}.')
     
 
-#Printing all of the list----------------------------------------------------------------------------------------------
+#Printing all of the list---------------------------------------------------------------------------------------------
 if AgeConfirm == True:
-    activity_lists()
+    activity_lists() #---- options for activites ---------------------------------------------------------------------
     ask1 = input("Enter the number of your chosen activity: ")
-    meal_Lists()
+    meal_Lists() #---- options for Meals -----------------------------------------------------------------------------
     ask2 = int(input("Enter the number of your meal choice: ")) #asking user what meal they want----------------------
 
 #Calculating the results----------------------------------------------------------------------------------------------
