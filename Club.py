@@ -79,9 +79,9 @@ elif ask1 == '3': #if user selects sports---------------------------------------
 
 
 if ask2 == 4: #if user selects no meal----------------------------------------------------------------------------------
-    mealfee = 0
+    mealfee = 0 #this here is to make sure that incase they dont select a meal, it wont create an error-----------------
 
-overall_fee = fee + mealfee
+overall_fee = fee + mealfee #adds all the addition fees together for the overall cost-----------------------------------
 
 #Printing the results---------------------------------------------------------------------------------------------------
 if AgeConfirm == True:
