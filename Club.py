@@ -42,9 +42,8 @@ def meal_Lists():
     print(f'2. {meal_list[1]}.')
     print(f'3. {meal_list[2]}.')
     print(f'4. {meal_list[3]}.')
-    
 
-#Printing all of the list---------------------------------------------------------------------------------------------
+#activity list loop--------------------------------------------------------------------------------------------------
 activity_lists() #---- options for activites ---------------------------------------------------------------------
 ask1 = "" #starting a while loop----------------------------------------------------------------------------------
 while ask1 == "":
@@ -55,8 +54,18 @@ while ask1 == "":
     elif ask1 >= 4:
         ask1 = ""
         print("please choose option 1, 2, or 3")
+
+#meal list loop--------------------------------------------------------------------------------------------------
 meal_Lists() #---- options for Meals -----------------------------------------------------------------------------
-ask2 = int(input("Enter the number of your meal choice: ")) #asking user what meal they want----------------------
+ask2 = ""
+while ask2 == "":
+    ask2 = int(input("Enter the number of your meal choice: ")) #asking user what meal they want----------------------
+    if ask2 == 0:
+        ask2 = ""
+        print("please choose option 1, 2, 3 or 4")
+    elif ask2 >= 5:
+        ask2 = ""
+        print("please choose option 1, 2, 3 or 4")
 
 #Calculating the results----------------------------------------------------------------------------------------------
 
