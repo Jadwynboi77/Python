@@ -1,11 +1,10 @@
 print("Welcome!")
 
-# Name----------------------------------------------------------------------------------------------------------------
+# Name---------------------------------------------------------------------------------------------------------------
 NameF = "" # name >>F<< means Name_>>First<<-------------------------------------------------------------------------
 while NameF == "":
     NameF = input("Please enter your first name: ")
 NameF = NameF.lower()
-
 
 # age and confirmation -----------------------------------------------------------------------------------------------
 
@@ -21,14 +20,11 @@ elif Age > 17:
 #Creating the list---------------------------------------------------------------------------------------------------
 meal_list = ["strandard","Vegetarian","Dairy-free","No meal"]
 Activity_list = ["Music jam Session","science experiments","Sports leadership training"]
-Other_list = [2,3,4,"easy","moderate","challenging","$5 fee","$10 fee","$12 fee"]
+Other_list = ["bypass",2,3,4,"easy","moderate","challenging","$5 fee","$10 fee","$12 fee"]
+#the bypass allows this list to start at 1, instead of starting at 0-------------------------------------------------
 
 #Creating the Varibables---------------------------------------------------------------------------------------------
-
-list_cutO = 0 #------------- the amount of hours --------------------------------------------------------------------
-list_cutT = 0 #------------- the difficulty of the activity----------------------------------------------------------
-list_cutTH = 0 #------------- the cost of the fee--------------------------------------------------------------------
-fee = 5
+fee = 0
 mealfee = 7
 
 #Printing the activity list------------------------------------------------------------------------------------------
@@ -50,30 +46,27 @@ def meal_Lists():
 
 #Printing all of the list---------------------------------------------------------------------------------------------
 activity_lists() #---- options for activites ---------------------------------------------------------------------
-ask1 = input("Enter the number of your chosen activity: ")
+ask1 = "" #starting a while loop----------------------------------------------------------------------------------
+while ask1 == "":
+    ask1 = int(input("Enter the number of your chosen activity: "))
+    if ask1 == 0:
+        ask1 = ""
+        print("please choose option 1, 2, or 3")
+    elif ask1 >= 4:
+        ask1 = ""
+        print("please choose option 1, 2, or 3")
 meal_Lists() #---- options for Meals -----------------------------------------------------------------------------
 ask2 = int(input("Enter the number of your meal choice: ")) #asking user what meal they want----------------------
 
 #Calculating the results----------------------------------------------------------------------------------------------
 
 
-if ask1 == '1': #if user selects music--------------------------------------------------------------------------------
-    list_count = 0
-    list_cutO = list_count 
-    list_cutT = list_cutO + 3 #-------------3 for the layout of the List "Other"--------------------------------------
-    list_cutTH = list_cutT + 3
+if ask1 == 1: #if user selects music--------------------------------------------------------------------------------
+    fee = 5
 elif ask1 == '2': #if user selects Science----------------------------------------------------------------------------
-    list_count = 1
-    list_cutO = list_count
-    list_cutT = list_cutO + 3 
-    list_cutTH = list_cutT + 3
-    fee = fee + 5
+    fee = 10
 elif ask1 == '3': #if user selects sports------------------------------------------------------------------------------
-    list_count = 2
-    list_cutO = list_count
-    list_cutT = list_cutO + 3
-    list_cutTH = list_cutT + 3
-    fee = fee + 7
+    fee = 12
 
 
 if ask2 == 4: #if user selects no meal----------------------------------------------------------------------------------
@@ -82,15 +75,15 @@ if ask2 == 4: #if user selects no meal------------------------------------------
 overall_fee = fee + mealfee #adds all the addition fees together for the overall cost-----------------------------------
 
 #Printing the results---------------------------------------------------------------------------------------------------
-print(f'{NameF}, age {Age}, has chosen {Activity_list[list_count]}, alongside a meal option of: {meal_list[ask2 - 1]}')
+print(f'{NameF}, age {Age}, has chosen {Activity_list[ask1 - 1]}, alongside a meal option of: {meal_list[ask2 - 1]}')
 print("the following activity will include:")
-print(f"{Other_list[list_cutO]} hours of practice, It's {Other_list[list_cutT]} and a {Other_list[list_cutTH]}")
+print(f"{Other_list[ask1]} hours of practice, It's {Other_list[ask1 + 3]} and a {Other_list[ask1 + 6]}")
 print(f"overall, the total cost comes to ${overall_fee}.")
 
 #Asking for attendence--------------------------------------------------------------------------------------------------
 
 attend = input("Are you going to be attending?(Yes or no): ")
 if attend == "yes":
-    print(f"{NameF} has comfirmed for {Activity_list[list_count]}, see you there!")
+    print(f"{NameF} has comfirmed for {Activity_list[ask1]}, see you there!")
 elif attend == "no":
-    print(f"{NameF} has not comfirmed for {Activity_list[list_count]}.")
+    print(f"{NameF} has not comfirmed for {Activity_list[ask1]}.")
