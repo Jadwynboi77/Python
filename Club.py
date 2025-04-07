@@ -1,23 +1,22 @@
 print("Welcome!")
 
 # Name----------------------------------------------------------------------------------------------------------------
-
-NameF = input("Please enter your first name: ")
+NameF = "" # name >>F<< means Name_>>First<<-------------------------------------------------------------------------
+while NameF == "":
+    NameF = input("Please enter your first name: ")
 NameF = NameF.lower()
+
 
 # age and confirmation -----------------------------------------------------------------------------------------------
 
-AgeConfirm = False 
 print('age MUST be inbetween 12 and 17')
 Age = int(input("Please enter your age: "))
-if Age >= 12 and Age <= 17: 
-    AgeConfirm == True
-elif Age < 12:
+if Age < 12:
     print("Sorry, you are too young.")
-    quit
+    exit()
 elif Age > 17:
     print("Sorry, you are too old.")
-    quit
+    exit()
 
 #Creating the list---------------------------------------------------------------------------------------------------
 meal_list = ["strandard","Vegetarian","Dairy-free","No meal"]
@@ -50,11 +49,10 @@ def meal_Lists():
     
 
 #Printing all of the list---------------------------------------------------------------------------------------------
-if AgeConfirm == True:
-    activity_lists() #---- options for activites ---------------------------------------------------------------------
-    ask1 = input("Enter the number of your chosen activity: ")
-    meal_Lists() #---- options for Meals -----------------------------------------------------------------------------
-    ask2 = int(input("Enter the number of your meal choice: ")) #asking user what meal they want----------------------
+activity_lists() #---- options for activites ---------------------------------------------------------------------
+ask1 = input("Enter the number of your chosen activity: ")
+meal_Lists() #---- options for Meals -----------------------------------------------------------------------------
+ask2 = int(input("Enter the number of your meal choice: ")) #asking user what meal they want----------------------
 
 #Calculating the results----------------------------------------------------------------------------------------------
 
@@ -84,16 +82,15 @@ if ask2 == 4: #if user selects no meal------------------------------------------
 overall_fee = fee + mealfee #adds all the addition fees together for the overall cost-----------------------------------
 
 #Printing the results---------------------------------------------------------------------------------------------------
-if AgeConfirm == True:
-    print(f'{NameF}, age {Age}, has chosen {Activity_list[list_count]}, alongside a meal option of: {meal_list[ask2 - 1]}')
-    print("the following activity will include:")
-    print(f"{Other_list[list_cutO]} hours of practice, It's {Other_list[list_cutT]} and a {Other_list[list_cutTH]}")
-    print(f"overall, the total cost comes to ${overall_fee}.")
+print(f'{NameF}, age {Age}, has chosen {Activity_list[list_count]}, alongside a meal option of: {meal_list[ask2 - 1]}')
+print("the following activity will include:")
+print(f"{Other_list[list_cutO]} hours of practice, It's {Other_list[list_cutT]} and a {Other_list[list_cutTH]}")
+print(f"overall, the total cost comes to ${overall_fee}.")
 
 #Asking for attendence--------------------------------------------------------------------------------------------------
-if AgeConfirm == True:
-    attend = input("Are you going to be attending?(Yes or no): ")
-    if attend == "yes":
-        print(f"{NameF} has comfirmed for {Activity_list[list_count]}, see you there!")
-    elif attend == "no":
-        print(f"{NameF} has not comfirmed for {Activity_list[list_count]}.")
+
+attend = input("Are you going to be attending?(Yes or no): ")
+if attend == "yes":
+    print(f"{NameF} has comfirmed for {Activity_list[list_count]}, see you there!")
+elif attend == "no":
+    print(f"{NameF} has not comfirmed for {Activity_list[list_count]}.")
