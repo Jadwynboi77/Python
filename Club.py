@@ -21,10 +21,10 @@ elif Age > 17:
 meal_list = ["strandard","Vegetarian","Dairy-free","No meal"]
 Activity_list = ["Music jam Session","science experiments","Sports leadership training"]
 Other_list = ["bypass",2,3,4,"easy","moderate","challenging","$5 fee","$10 fee","$12 fee"]
+fee_list = [5,10,12]
 #the bypass allows this list to start at 1, instead of starting at 0-------------------------------------------------
 
 #Creating the Varibables---------------------------------------------------------------------------------------------
-fee = 0
 mealfee = 7
 
 #Printing the activity list------------------------------------------------------------------------------------------
@@ -69,19 +69,10 @@ while ask2 == "":
 
 #Calculating the results----------------------------------------------------------------------------------------------
 
-
-if ask1 == 1: #if user selects music--------------------------------------------------------------------------------
-    fee = 5
-elif ask1 == '2': #if user selects Science----------------------------------------------------------------------------
-    fee = 10
-elif ask1 == '3': #if user selects sports------------------------------------------------------------------------------
-    fee = 12
-
-
 if ask2 == 4: #if user selects no meal----------------------------------------------------------------------------------
     mealfee = 0 #this here is to make sure that incase they dont select a meal, it wont create an error-----------------
 
-overall_fee = fee + mealfee #adds all the addition fees together for the overall cost-----------------------------------
+overall_fee = fee_list[ask1 - 1] + mealfee #adds all the addition fees together for the overall cost-----------------------------------
 
 #Printing the results---------------------------------------------------------------------------------------------------
 print(f'{NameF}, age {Age}, has chosen {Activity_list[ask1 - 1]}, alongside a meal option of: {meal_list[ask2 - 1]}')
