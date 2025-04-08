@@ -87,3 +87,4 @@ if attend == "yes":
     print(f"{NameF} has comfirmed for {Activity_list[ask1]}, see you there!")
 elif attend == "no":
     print(f"{NameF} has not comfirmed for {Activity_list[ask1]}.")
+    exit()
