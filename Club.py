@@ -76,6 +76,9 @@ overall_fee = fee_list[ask1 - 1] + mealfee #adds all the addition fees together 
 
 #Printing the results---------------------------------------------------------------------------------------------------
 print(f'{NameF}, age {Age}, has chosen {Activity_list[ask1 - 1]}, alongside a meal option of: {meal_list[ask2 - 1]}')
+if ask2 == 4:
+    print("there will not be a meal cost since you have not chosen one.")
+else: print("Your meal will add an additional $7,")
 print("the following activity will include:")
 print(f"{Other_list[ask1]} hours of practice, It's {Other_list[ask1 + 3]} and a {Other_list[ask1 + 6]}")
 print(f"overall, the total cost comes to ${overall_fee}.")
