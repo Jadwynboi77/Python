@@ -9,14 +9,18 @@ NameF = NameF.lower()
 # age and confirmation -----------------------------------------------------------------------------------------------
 
 print('age MUST be inbetween 12 and 17')
-Age = int(input("Please enter your age: "))
-if Age < 12:
-    print("Sorry, you are too young.")
-    exit()
-elif Age > 17:
-    print("Sorry, you are too old.")
-    exit()
-
+try:
+    Age = int(input("Please enter your age: "))
+    if Age < 12:
+        print("Sorry, you are too young.")
+        exit()
+    elif Age > 17:
+        print("Sorry, you are too old.")
+        exit()
+# if there is an exception, print this out
+except ValueError:
+  print("That's not a valid number!")
+  
 #Creating the list---------------------------------------------------------------------------------------------------
 meal_list = ["strandard","Vegetarian","Dairy-free","No meal"]
 Activity_list = ["Music jam Session","science experiments","Sports leadership training"]
